@@ -22,7 +22,7 @@ def media(x): #MEDIA
 def devst(x): #DEVIAZIONE STANDARD
   s = 0.0
   N = len(x)
-  m = mean(x)
+  m = media(x)
   for i in x:
     s = s + (i-m)**2 #attenzione: potevo usare +=
 
