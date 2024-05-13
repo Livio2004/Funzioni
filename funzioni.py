@@ -84,16 +84,12 @@ def Gaussian(z):
 def Test_hp(x1,x2,s1,s2) :
   t = np.absolute(x1-x2)/np.sqrt(s1**2+s2**2)  #t di confronto
   R = quad(Gaussian,-t,t) #calcolo del rapporto con l'integrale
-  P = 1 - R[0]
-  S = P/2.0
-  return S
+  return R
 
 def Test_hp2(x1,X,s) :  #test di ipotesi con un valore calcolato
   t = np.absolute(x1-X)/s  #t di confronto
   R = quad(Gaussian,-t,t) #calcolo del rapporto con l'integrale
-  P = 1 - R[0]
-  S = P/2.0
-  return S
+  return R
 
 def cov(x,y,sy) :
   t = -1*(np.sum(x)/(len(x)*np.sum(x**2)-(np.sum(x))**2))
