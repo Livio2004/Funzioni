@@ -70,9 +70,10 @@ def chi2(A,B, x, y, sy) :  #Chi quadro relativo all'interpolazione lineare
   s=np.sum(np.power(y-A-B*x,2)/sy**2)
   return s
 
-def chi2prob(x, chi2) :
+def chi2prob(x, chi23) :
     s = chi2.pdf(chi2, len(x)-2)
-    return s
+    r = s*100
+    return r
     
 
 def chi2Gauss(E, O) :  #Chi quadro distribuzioni Gaussiane
