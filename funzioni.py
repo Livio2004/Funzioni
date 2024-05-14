@@ -72,7 +72,7 @@ def chi2(A,B, x, y, sy) :  #Chi quadro relativo all'interpolazione lineare
 
 def chi2prob(x, chi23) :
     s = chi2.pdf(chi2, len(x)-2)
-    r = s*100
+    r = 100 - s*100
     return r
     
 
