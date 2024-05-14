@@ -10,6 +10,7 @@ Original file is located at
 import math
 import numpy as np
 from scipy.integrate import quad
+from scipy.stats import chi2
 
 
 def media(x): #MEDIA
@@ -68,6 +69,11 @@ def minimi_quadrati2(x, y, s_y) :   #Minimi quadrati per interpolazione lineare 
 def chi2(A,B, x, y, sy) :  #Chi quadro relativo all'interpolazione lineare
   s=np.sum(np.power(y-A-B*x,2)/sy**2)
   return s
+
+def chi2prob(x, chi2,df) :
+    s = chi2.pdf(chi2, len(x)-2)
+    return s
+    
 
 def chi2Gauss(E, O) :  #Chi quadro distribuzioni Gaussiane
   s = O - E
