@@ -20,6 +20,11 @@ def media(x): #MEDIA
     m /= len(x) # /= divide la variabile m per len(x)
     return m
 
+def media_pesata(x, sigma) :
+  m = np.sum(x/sigma**2)/np.sum(1/sigma**2)
+  sigma_m = 1/np.sqrt(np.sum(1/sigma**2))
+  return m, sigma_m
+
 def devst(x): #DEVIAZIONE STANDARD
   s = 0.0
   N = len(x)
